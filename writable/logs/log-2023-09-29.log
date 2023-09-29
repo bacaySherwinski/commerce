@@ -16,3 +16,27 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 09:45:30 --> Undefined variable $product
+in APPPATH\Views\pages\product.php on line 74.
+ 1 APPPATH\Views\pages\product.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\laragon\\www\\commerce\\app\\Views\\pages\\product.php', 74)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\commerce\\app\\Views\\pages\\product.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('pages/product', [], true)
+ 5 APPPATH\Controllers\ProductController.php(21): view('pages/product')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->view()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\commerce\\public\\index.php')
+CRITICAL - 2023-09-29 09:48:06 --> Undefined variable $product
+in APPPATH\Views\pages\products.php on line 74.
+ 1 APPPATH\Views\pages\products.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\laragon\\www\\commerce\\app\\Views\\pages\\products.php', 74)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\commerce\\app\\Views\\pages\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('pages/products', [], true)
+ 5 APPPATH\Controllers\ProductController.php(21): view('pages/products')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->view()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\commerce\\public\\index.php')
