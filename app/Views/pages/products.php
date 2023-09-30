@@ -118,6 +118,7 @@
             <th>Price</th>
             <th>Category</th>
             <th>Quantity</th>
+            <th>Action</th>
         </tr>
         <?php foreach ($product as $pr): ?>
             <tr>
@@ -127,8 +128,11 @@
                 <td><?= $pr['price'] ?></td>
                 <td><?= $pr['category'] ?></td>
                 <td><?= $pr['quantity'] ?></td>
+                <td><a href="/delete/<?= $pr['id'] ?>" class="delete">Delete</a>|| <a href="/edit/<?= $pr['id'] ?>">Update</a></td> 
+                
             </tr>
         <?php endforeach; ?>
+        
     </table>
 
     <!-- Add Products Button with Bootstrap Styling -->
@@ -144,20 +148,26 @@
             <div class="form-container">
         <form action="/save" method="post">
             <label>Name</label>
-            <input type="hidden" name="id" value="<?= isset($stu) ? $stu['id'] : '' ?>">
-            <input type="text" name="name" placeholder="Name" value="<?= isset($stu) ? $stu['name'] : '' ?>">
+            <input type="text" name="name" placeholder="Name">
             <br>
-            <label>Address</label>
-            <input type="text" name="address" placeholder="Address" value="<?= isset($stu) ? $stu['address'] : '' ?>">
+            <label>Description</label>
+            <input type="text" name="description" placeholder="Description">
             <br>
-            <label>Phone Number</label>
-            <input type="text" name="number" placeholder="Phone Number" value="<?= isset($stu) ? $stu['number'] : '' ?>">
+            <label>Image</label>
+            <?php if (isset($pr) && !empty($pr['image_blob'])) : ?>
+             <img src="data:image/jpeg;base64,<?= base64_encode($pr['image_blob']) ?>" alt="Product Image">
+                <?php endif; ?>
+                <input type="file" name="image" accept="image/*">
+                <br>
+
+            <label>Price</label>
+            <input type="text" name="price" placeholder="Price" >
             <br>
-            <label>Sex</label>
-            <input type="text" name="sex" placeholder="Sex" value="<?= isset($stu) ? $stu['sex'] : '' ?>">
+            <label>Category</label>
+            <input type="text" name="category" placeholder="Category">
             <br>
-            <label>Id Number</label>
-            <input type="text" name="studentId" placeholder="Id Number" value="<?= isset($stu) ? $stu['studentId'] : '' ?>">
+            <label>Quantity</label>
+            <input type="text" name="quantity" placeholder="Quantity">
             <br>
             <div style="margin-top: 10px;"></div>
             <input type="submit" value="Save">
