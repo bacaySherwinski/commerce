@@ -22,7 +22,7 @@ class ProductController extends BaseController
     }
     public function save()
     {
-        $id =$_POST['id'];
+       
         $data = [
             'name'=>$this->request->getVar('name'),      
             'description'=>$this->request->getVar('description'),
@@ -31,12 +31,10 @@ class ProductController extends BaseController
             'category'=>$this->request->getVar('category'),
             'quantity'=>$this->request->getVar('quantity'),
             ];
-            if($id!= null){
-                $this->product->set($data)->where('id', $id)->update();
-            }else{
+           
            
             $this->product->save($data);
-            }
+            
         
         return redirect()->to('/products');
     
