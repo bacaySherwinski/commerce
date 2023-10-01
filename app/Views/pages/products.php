@@ -222,72 +222,90 @@
                     <td><?= $pr['price'] ?></td>
                     <td><?= $pr['category'] ?></td>
                     <td><?= $pr['quantity'] ?></td>
-                    <td><a href="/delete/<?= $pr['id'] ?>" class="delete">Delete</a>|| <a href="#" id="openUpdateModalBtn" class="update-link">Update</a>                </tr>
-            <?php endforeach; ?>
+                    <td>
+    <a href="/delete/<?= $pr['id'] ?>" class="delete">Delete</a> || 
+    <a href="#" class="update-link" data-product-id="<?= $pr['id'] ?>">Update</a>
+</td>
+           <?php endforeach; ?>
         </table>
     </div>
-<!-- Modal for Updating Product -->
 <div id="updateModal" class="modal">
     <div class="modal-content">
         <span id="closeUpdateModalBtn" class="close">&times;</span>
-        <!-- Your modal content for updating products here -->
         <h3>Update</h3>
-        <!-- Add form fields or content for updating products here -->
         <div class="form-container2">
-            <form action="/update" method="post">
+            <form action="/save" method="post">
             <label>Name</label>
-                <input type="text" name="name" placeholder="Name">
+                <input type="hidden" name="id" value="<?= isset($pr) ? $pr['id'] : '' ?>">
+                <input type="text" name="name" placeholder="Name" value="<?= isset($pr) ? $pr['name'] : '' ?>">
                 <br>
                 <label>Description</label>
-                <input type="text" name="description" placeholder="Description">
+                <input type="text" name="description" placeholder="Description" value="<?= isset($pr) ? $pr['description'] : '' ?>">
                 <br>
                 <label>Image</label>
-                <input type="file" name="image" accept="image/*">
+                <input type="file" name="image" accept="image/*" >
                 <br>
                 <label>Price</label>
-                <input type="text" name="price" placeholder="Price">
+                <input type="text" name="price" placeholder="Price" value="<?= isset($pr) ? $pr['price'] : '' ?>">
                 <br>
                 <label>Category</label>
-                <input type="text" name="category" placeholder="Category">
+                <input type="text" name="category" placeholder="Category" value="<?= isset($pr) ? $pr['category'] : '' ?>">
                 <br>
                 <label>Quantity</label>
-                <input type="number" name="quantity" placeholder="Quantity">
+                <input type="number" name="quantity" placeholder="Quantity" value="<?= isset($pr) ? $pr['quantity'] : '' ?>">
                 <br>
-                <input type="submit" value="Save">
+                <input type="submit" value="Update">
             </form>
         </div>
     </div>
 </div>
 <script>
     // Get the update modal and buttons
-var openUpdateModalBtn = document.getElementById("openUpdateModalBtn");
-var updateModal = document.getElementById("updateModal");
-var closeUpdateModalBtn = document.getElementById("closeUpdateModalBtn");
+    var updateModal = document.getElementById("updateModal");
+    var closeUpdateModalBtn = document.getElementById("closeUpdateModalBtn");
+    var updateLinks = document.querySelectorAll(".update-link");
 
-// Function to open the update modal
-function openUpdateModal() {
-    updateModal.style.display = "block";
-}
+    // Function to open the update modal and populate it with data
+    function openUpdateModal(productID) {
+        // Fetch product data using an AJAX request and populate the modal form fields
+        // Replace the URL below with the actual endpoint to retrieve product data
+        fetch(`/get-product-data?id=${productID}`)
+            .then(response => response.json())
+            .then(data => {
+                // Populate the form fields in the modal with data
+                document.getElementById("name").value = data.name;
+                document.getElementById("description").value = data.description;
+                // ... (populate other fields)
+            });
 
-// Function to close the update modal
-function closeUpdateModal() {
-    updateModal.style.display = "none";
-}
-
-// Event listener for opening the update modal when the button is clicked
-openUpdateModalBtn.addEventListener("click", openUpdateModal);
-
-// Event listener for closing the update modal when the close button is clicked
-closeUpdateModalBtn.addEventListener("click", closeUpdateModal);
-
-// Event listener for closing the update modal when clicking outside the modal
-window.addEventListener("click", function(event) {
-    if (event.target == updateModal) {
-        closeUpdateModal();
+        updateModal.style.display = "block";
     }
-});
 
+    // Function to close the update modal
+    function closeUpdateModal() {
+        updateModal.style.display = "none";
+    }
+
+    // Event listener for opening the update modal when an "Update" link is clicked
+    updateLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            var productID = this.getAttribute("data-product-id");
+            openUpdateModal(productID);
+        });
+    });
+
+    // Event listener for closing the update modal when the close button is clicked
+    closeUpdateModalBtn.addEventListener("click", closeUpdateModal);
+
+    // Event listener for closing the update modal when clicking outside the modal
+    window.addEventListener("click", function(event) {
+        if (event.target == updateModal) {
+            closeUpdateModal();
+        }
+    });
 </script>
+
     <!-- JavaScript to handle the modal (if needed) -->
 </body>
 </html>

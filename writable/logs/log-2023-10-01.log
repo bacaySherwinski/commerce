@@ -1,0 +1,48 @@
+CRITICAL - 2023-10-01 01:27:20 --> Undefined array key "id"
+in APPPATH\Controllers\ProductController.php on line 25.
+ 1 APPPATH\Controllers\ProductController.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\commerce\\app\\Controllers\\ProductController.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->save()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\commerce\\public\\index.php')
+CRITICAL - 2023-10-01 01:36:07 --> syntax error, unexpected end of file
+in APPPATH\Views\pages\products.php on line 284.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('pages/products', [], true)
+ 3 APPPATH\Controllers\ProductController.php(21): view('pages/products', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->view()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\commerce\\public\\index.php')
+CRITICAL - 2023-10-01 01:39:03 --> Invalid file: "products.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 3 APPPATH\Controllers\ProductController.php(59): view('products', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\commerce\\public\\index.php')
+CRITICAL - 2023-10-01 01:39:48 --> Invalid file: "products.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 3 APPPATH\Controllers\ProductController.php(59): view('products', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('18')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\commerce\\public\\index.php')
+CRITICAL - 2023-10-01 01:43:35 --> Invalid file: "products.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 3 APPPATH\Controllers\ProductController.php(59): view('products', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\commerce\\public\\index.php')
