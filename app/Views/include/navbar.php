@@ -38,14 +38,9 @@
                             <a href="index.php" class="nav-item nav-link active">Home</a>
                             <a href="/products" class="nav-item nav-link">Add Item</a>
                             <a href="/list" class="nav-item nav-link">Products</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            
+                            <a href="<?= site_url("register"); ?>" class="dropdown-item">Register</a>
+                            <a href="<?= site_url("login"); ?>" class="dropdown-item">Login</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
